@@ -26,14 +26,7 @@
 
   <xacro:property
     name="camera_gazebo_ignition"
-    value="false" />
-  <xacro:if value="$(arg gazebo_ignition)">
-    <xacro:if value="$(arg enable_camera)">
-      <xacro:property
-        name="camera_gazebo_ignition"
-        value="true" />
-    </xacro:if>
-  </xacro:if>
+    value="${'$(arg gazebo_ignition)' == 'true' and '$(arg enable_camera)' == 'true'}" />
 
   <!-- RB-KAIROS -->
   <xacro:rbkairos
